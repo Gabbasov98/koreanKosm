@@ -1,0 +1,129 @@
+.text {
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+h2 {
+    font-size: 26px;
+    line-height: 120%;
+    font-weight: 700;
+    margin: 9px 0;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 120%;
+    font-weight: 500;
+    margin: 9px 0;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 500;
+    margin: 9px 0;
+}
+
+p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #262626;
+    margin-bottom: 10px;
+    & a {
+        color: #976e28;
+        // padding: 0 5px;
+        &:hover {
+            color: #fff;
+            background-color: #976e28;
+        }
+    }
+    & strong {
+        font-family: "Franklin Gothic Demi C", sans-serif;
+        color: #3c3c3c;
+    }
+}
+
+li {
+    font-size: 13px;
+    line-height: 24px;
+    padding-left: 20px;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+    }
+}
+
+ul {
+    & li {
+        &:before {
+            width: 4px;
+            height: 4px;
+            background-color: #c19d5f;
+            border-radius: 50%;
+            top: 8px;
+        }
+    }
+}
+
+ol {
+    counter-reset: num;
+    & li:before {
+        content: counter(num) ".";
+        counter-increment: num;
+        min-width: 20px;
+        height: 24px;
+        font-size: 13px;
+        line-height: 24px;
+        font-weight: 400;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text {
+        margin: 18px 0 34px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    h4 {
+        font-size: 14px;
+    }
+    p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    li {
+        font-size: 12px;
+        padding-left: 15px;
+        line-height: 18px;
+        margin-bottom: 4px;
+    }
+    ul {
+        & li {
+            &:before {
+                top: 6px;
+            }
+        }
+    }
+    ol {
+        & li {
+            &:before {
+                font-size: 12px;
+                min-width: unset;
+                line-height: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
